@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='images/' + img) }}" alt="Uploaded Image">
+
+        <div class="prediction">
+            <h2>Model Prediction</h2>
+            <table>
+                <tr>
+                    <th>Rank</th>
+                    <th>Class</th>
+                    <th>Probability</th>
+                </tr>
+                <tr>
+                    <td>1st</td>
+                    <td>{{ predictions.class1 }}</td>
+                    <td>{{ predictions.prob1 }}%</td>
+                </tr>
+                <tr>
+                    <td>2nd</td>
+                    <td>{{ predictions.class2 }}</td>
+                    <td>{{ predictions.prob2 }}%</td>
+                </tr>
+                <tr>
+                    <td>3rd</td>
+                    <td>{{ predictions.class3 }}</td>
+                    <td>{{ predictions.prob3 }}%</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
